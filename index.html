@@ -2,16 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PlayFab JavaScript Unit Tests</title>
+    <title>BeatAim Alpha</title>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
     <script type="text/javascript" src="PlayFabGettingStarted.js"></script>
+	<link rel="stylesheet" href="styles.css">
+	<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 </head>
 <body>
-    PlayFab Getting Started Guide<br />
-    Player name: <input type="text" id="playerName" value=""><br />
-	TitleID: <input type="text" id="email" value=""><br />
-    <input type="button" value="Call LoginWithCustomID" onclick="DoExampleLoginWithCustomID()"><br />
-    Result:<br />
-    <textarea id="resultOutput" cols="60" rows="5"></textarea><br />
+<div id="center-panel2">
+<img src="logo.png" alt="logo.png" height="200" width="200" align="center"/>
+</div>
+<div id="center-panel">
+    <h1>BeatAim Closed Alpha</h1>
+    <h2>Sign up:</h2>
+    <div id="input-panel">Player name: <br /><input type="text" id="playerName" value=""></div><br />
+	<div id="input-panel">Email: <br /><input type="text" id="email" value=""></div><br /><br />
+    <input type="button" value="Register" onclick="Register()"><br />
+    <br />
+    <textarea id="resultOutput" cols="64" rows="2" readonly></textarea><br />
+</div>
 </body>
 </html>

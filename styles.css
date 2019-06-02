@@ -1,0 +1,64 @@
+body {
+  background-image: url("background.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-attachment: fixed;
+}
+
+#center-panel {
+     margin: 0 auto;
+     width: 100px; 
+    width:30em;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    font-family: Trebuchet MS, sans-serif;
+    margin-top: 5em;
+}
+
+#center-panel2 {
+    margin: 0 auto;
+    width: 200px; 
+}
+
+input[type=button] {
+	border: 3px solid #000;
+	padding: 0.8rem 2rem;
+	font: 24px "Margarine", sans-serif;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+	transition: 0.2s ease-in-out;
+	letter-spacing: 2px;
+    left: 25%;
+  width: 50%;
+}
+
+input[type=button]:hover {
+     background: #AAA;
+}
+
+input[type=button]:active {
+     background: #888;
+}
+
+input[type=text] {
+	padding: 0.4rem;
+	position: relative;
+  width: 100%;
+}
+
+#input-panel {
+	padding: 0.4rem 2rem;
+	width: 80%;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+textarea
+{
+	background: none;
+	border: none;
+}

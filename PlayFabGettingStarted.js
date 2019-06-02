@@ -1,24 +1,48 @@
 var titleID = "FB3";
+var userEmail;
 
-function DoExampleLoginWithCustomID(){
+function Register(){
     //PlayFab.settings.titleId = document.getElementById("titleId").value;
-    var loginRequest = {
+	
+	userEmail = document.getElementById("email").value;
+	
+    var registerRequest = {
         TitleId: titleID,// PlayFab.settings.titleId,
         Username: document.getElementById("playerName").value,
-        Email: document.getElementById("email").value,
-		RequireBothUsernameAndEmail: true
+        DisplayName: document.getElementById("playerName").value,
+        Email: userEmail,
+		RequireBothUsernameAndEmail: true,
+		Password: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) //not important user won't be able to login anyway
     };
 
-    PlayFabClientSDK.LoginWithCustomID(loginRequest, LoginCallback);
+    PlayFabClientSDK.RegisterPlayFabUser(registerRequest, RegisterCallback);
 }
 
-var LoginCallback = function (result, error) {
+var RegisterCallback = function (result, error) {
+	//userEmail = document.getElementById("email").value;
     if (result !== null) {
-        document.getElementById("resultOutput").innerHTML = "Congratulations, you made your first successful API call!";
+        document.getElementById("resultOutput").innerHTML = "Account created, sending mail to "  + userEmail;
+		
+		var recoveryRequest = {
+			TitleId: titleID,
+			Email: userEmail
+		};
+		
+		PlayFabClientSDK.SendAccountRecoveryEmail(recoveryRequest, MailSentCallback);
+		
     } else if (error !== null) {
         document.getElementById("resultOutput").innerHTML =
-            "Something went wrong with your first API call.\n" +
-            "Here's some debug information:\n" +
+            "Error:\n" +
+            PlayFab.GenerateErrorReport(error);
+    }
+}
+
+var MailSentCallback = function (result, error) {
+    if (result !== null) {
+        document.getElementById("resultOutput").innerHTML = "Confimation mail to sent to " + userEmail + ". Set up your password there.";
+    } else if (error !== null) {
+        document.getElementById("resultOutput").innerHTML =
+            "Error:\n" +
             PlayFab.GenerateErrorReport(error);
     }
 }
