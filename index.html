@@ -5,21 +5,24 @@
     <title>BeatAim Alpha</title>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
     <script type="text/javascript" src="PlayFabGettingStarted.js"></script>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="./styles.css">
 	<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 </head>
 <body>
-<div id="center-panel2">
-<img src="logo.png" alt="logo.png" height="200" width="200" align="center"/>
-</div>
-<div id="center-panel">
-    <h1>BeatAim Closed Alpha</h1>
-    <h2>Sign up:</h2>
-    <div id="input-panel">Player name: <br /><input type="text" id="playerName" value=""></div><br />
-	<div id="input-panel">Email: <br /><input type="text" id="email" value=""></div><br /><br />
-    <input type="button" value="Register" onclick="Register()"><br />
-    <br />
-    <textarea id="resultOutput" cols="64" rows="2" readonly></textarea><br />
-</div>
+    <div class="site">
+        <div class="login-box">
+            <div class="login-headers">
+                <h1>Closed Alpha</h1>
+                <h2>Sign up:</h2>
+            </div>
+            <div class="input-panel">
+                <input type="text" id="playerName" placeholder="Username" value="">
+                <input type="email" id="email" placeholder="E-mail" value="">
+            </div>
+            <button>Register</button>
+            <div id="resultOutput"></div>
+        </div>
+    </div>
+    <div class="background"></div>
 </body>
 </html>
