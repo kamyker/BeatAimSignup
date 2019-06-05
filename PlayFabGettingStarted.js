@@ -3,9 +3,9 @@ var userEmail;
 
 function Register(){
     //PlayFab.settings.titleId = document.getElementById("titleId").value;
-	
+
 	userEmail = document.getElementById("email").value;
-	
+
     var registerRequest = {
         TitleId: titleID,// PlayFab.settings.titleId,
         Username: document.getElementById("playerName").value,
@@ -22,14 +22,14 @@ var RegisterCallback = function (result, error) {
 	//userEmail = document.getElementById("email").value;
     if (result !== null) {
         document.getElementById("resultOutput").innerHTML = "Account created, sending mail to "  + userEmail;
-		
+
 		var recoveryRequest = {
 			TitleId: titleID,
 			Email: userEmail
 		};
-		
+
 		PlayFabClientSDK.SendAccountRecoveryEmail(recoveryRequest, MailSentCallback);
-		
+
     } else if (error !== null) {
         document.getElementById("resultOutput").innerHTML =
             "Error:\n" +
