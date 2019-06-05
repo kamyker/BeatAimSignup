@@ -46,3 +46,5 @@ var MailSentCallback = function (result, error) {
             PlayFab.GenerateErrorReport(error);
     }
 }
+//Listen for click on button element
+document.querySelector('button').addEventListener('click', Register);
