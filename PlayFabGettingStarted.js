@@ -2,7 +2,7 @@ var titleID = "FB3";
 var userEmail;
 
 function Register(){
-    //PlayFab.settings.titleId = document.getElementById("titleId").value;
+    PlayFab.settings.titleId = titleID;
 	
 	userEmail = document.getElementById("email").value;
 	
